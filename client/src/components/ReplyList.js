@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 export default class ReplyList extends Component {
-  reder() {
+  render() {
     return (
       <div>
 

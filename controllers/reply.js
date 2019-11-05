@@ -23,9 +23,15 @@ replyRouter.put('/:replyId', async (req, res) => {
 })
 
 //delete
-replyRouter.get('/:replyId', async (req, res) => {
+replyRouter.delete('/:replyId', async (req, res) => {
   const deleted = await replyApi.deleteReply(req.params.replyId)
   return res.json(deleted)
+})
+
+// get replies by review Id
+replyRouter.get('/list/:reviewId', async (req, res) => {
+  const replyList = await replyApi.getReplyByReviewId(req.params.reviewId)
+  return res.json(replyList)
 })
 
 // get one
@@ -34,11 +40,7 @@ replyRouter.get('/:replyId', async (req, res) => {
   return res.json(reply)
 })
 
-// get replies by review Id
-replyRouter.get('/:reviewId', async (req, res) => {
-  const replyList = await replyApi.getReplyByReviewId(req.params.reviewId)
-  return res.json(replyList)
-})
+
 
 module.exports = {
   replyRouter

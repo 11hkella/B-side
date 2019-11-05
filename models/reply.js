@@ -2,7 +2,7 @@ const mongoose = require('./connection.js')
 
 const ReplySchema = new mongoose.Schema({
   message: String,
-  reviewId: mongoose.Object,
+  reviewId: mongoose.Types.ObjectId,
 })
 
 const ReplyCollection = mongoose.model('Reply', ReplySchema)

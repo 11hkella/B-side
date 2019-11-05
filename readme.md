@@ -7,4 +7,5 @@ B side is a album review app that allows users to post opinion pieces about the 
 
 # Stretch goals
 1. upload images (Firebase)
+1. save a review draft
 1. 

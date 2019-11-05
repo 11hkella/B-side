@@ -2,11 +2,11 @@ const mongoose = require('./connection.js')
 
 const ReviewSchema = new mongoose.Schema({
   artist: String,
-  albumOrSong: String,
+  title: String,
   image: String,
   like: Boolean,
   message: String,
-  agree: Number,
+  upPlay: Number,
 })
 
 const ReviewCollection = mongoose.model('Review', ReviewSchema)

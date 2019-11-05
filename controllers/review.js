@@ -23,7 +23,7 @@ reviewRouter.put('/:reviewId', async (req, res) => {
 })
 
 //delete
-reviewRouter.get('/:reviewId', async (req, res) => {
+reviewRouter.delete('/:reviewId', async (req, res) => {
   const deleted = await reviewApi.deleteReview(req.params.reviewId)
   return res.json(deleted)
 })
