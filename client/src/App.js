@@ -1,6 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import HelloWorld from './components/HelloWorld.js'
+
+import Home from './components/Home.js'
+import ReviewPage from './components/ReviewPage.js'
+
+
 import './App.css';
 
 function App() {
@@ -8,7 +12,8 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/" component={HelloWorld}/>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/review" component={ReviewPage} />
         </Switch>
       </Router>
     </div>

@@ -4,3 +4,7 @@ B side is a album review app that allows users to post opinion pieces about the 
 # Wireframe and ERD
 ![ERD](/images/ERD.png)
 ![wireframe](/images/P3-wireframe.jpg)
+
+# Stretch goals
+1. upload images (Firebase)
+1. 
