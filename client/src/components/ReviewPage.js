@@ -22,7 +22,20 @@ export default class ReviewPage extends Component {
     const replyListRes = await axios.get(`/api/reply/list/${id}`)
 
     await this.setState(reviewRes.data)
-    this.setState(replyListRes.data)
+    this.setState({ replyList: replyListRes.data })
+  }
+  onReplyFormChange = (e) => {
+    const newReply = e.target.value
+    this.setState({ newReply })
+  }
+  submitNewReply = async () => {
+    console.log('click')
+    const reply = {
+      message: this.state.newReply,
+      reviewId: this.state._id
+    }
+    await axios.post('/api/reply', reply)
+    this.updatePageInfo()
   }
 
   render() {
@@ -36,8 +49,9 @@ export default class ReviewPage extends Component {
           <p>{this.state.message}</p>
         </div>
         <div>
-          <textarea name='newReply' placeholder='write a reply...' />
-          <button>Submit</button>
+          <textarea name='newReply' placeholder='write a reply...'
+            onChange={this.onReplyFormChange} />
+          <button onClick={this.submitNewReply}>Submit</button>
         </div>
       </div>
     )
