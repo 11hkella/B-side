@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+import ReplyList from './ReplyList'
+
 export default class ReviewPage extends Component {
   state = {
     artist: '',
@@ -29,15 +31,18 @@ export default class ReviewPage extends Component {
     this.setState({ newReply })
   }
   submitNewReply = async () => {
-    console.log('click')
     const reply = {
       message: this.state.newReply,
+      like: false,
       reviewId: this.state._id
     }
     await axios.post('/api/reply', reply)
     this.updatePageInfo()
   }
-
+  deleteReply = async (id) => {
+    await axios.delete(`/api/reply/${id}`)
+    this.updatePageInfo()
+  }
   render() {
     return (
       <div>
@@ -52,6 +57,16 @@ export default class ReviewPage extends Component {
           <textarea name='newReply' placeholder='write a reply...'
             onChange={this.onReplyFormChange} />
           <button onClick={this.submitNewReply}>Submit</button>
+        </div>
+        <div className="Reply List">
+          {this.state.replyList.map((reply, i) => {
+            return <ReplyList
+              message={reply.message}
+              id={reply._id}
+              like={reply.like}
+              deleteReply={this.deleteReply}
+              key={i} />
+          })}
         </div>
       </div>
     )

@@ -2,6 +2,7 @@ const mongoose = require('./connection.js')
 
 const ReplySchema = new mongoose.Schema({
   message: String,
+  like: Boolean,
   reviewId: mongoose.Types.ObjectId,
 })
 
