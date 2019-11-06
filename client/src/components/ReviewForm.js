@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { Redirect } from 'react-router-dom'
 
 export default class ReviewForm extends Component {
   state = {
@@ -7,13 +8,17 @@ export default class ReviewForm extends Component {
     newTitle: '',
     newImage: '',
     newMessage: '',
+    redirect: false,
   }
+
   onFormChange = (e) => {
     const previousState = { ...this.state }
     previousState[e.target.name] = e.target.value
     this.setState(previousState)
   }
-  submitNewReview = async () => {
+
+  submitNewReview = async (e) => {
+    e.preventDefault()
     const newReview = {
       artist: this.state.newArtist,
       title: this.state.newTitle,
@@ -22,9 +27,14 @@ export default class ReviewForm extends Component {
       message: this.state.newMessage,
       upPlay: 0,
     }
-    const created = await axios.post('/api/review', newReview)
-    this.renderReviewList()
+    await axios.post('/api/review', newReview)
+    this.setRedirect()
   }
+
+  setRedirect = () => {
+    this.setState({ redirect: true })
+  }
+
   render() {
     return (
       <div>
@@ -54,6 +64,9 @@ export default class ReviewForm extends Component {
           <input type='submit' />
 
         </form>
+
+        {this.state.redirect ?
+          <Redirect to='/' /> : null}
 
       </div>
     )
