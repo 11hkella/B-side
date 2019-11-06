@@ -44,7 +44,9 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-                <h1>B Side</h1>
+                <header>
+                    <h1>B Side</h1>
+                </header>
 
                 {this.state.toggleForm
                     ?

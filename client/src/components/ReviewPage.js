@@ -11,6 +11,7 @@ export default class ReviewPage extends Component {
     upPlay: 0,
     _id: '',
     replyList: [],
+    newReply: '',
   }
   componentDidMount() {
     this.updatePageInfo()
@@ -19,12 +20,25 @@ export default class ReviewPage extends Component {
     const id = this.props.match.params.reviewId
     const reviewRes = await axios.get(`/api/review/${id}`)
     const replyListRes = await axios.get(`/api/reply/list/${id}`)
-    this.setState(reviewRes.data)
+
+    await this.setState(reviewRes.data)
+    this.setState(replyListRes.data)
   }
+
   render() {
     return (
       <div>
-
+        <header>
+          <h1>{this.state.title}</h1>
+          <h3>{this.state.artist}</h3>
+        </header>
+        <div>
+          <p>{this.state.message}</p>
+        </div>
+        <div>
+          <textarea name='newReply' placeholder='write a reply...' />
+          <button>Submit</button>
+        </div>
       </div>
     )
   }
