@@ -35,7 +35,7 @@ export default class Home extends Component {
             message: this.state.newMessage,
             upPlay: 0,
         }
-        const created = await axios.post('/api/review', newReview)
+        await axios.post('/api/review', newReview)
         this.renderReviewList()
     }
     toggleFormClick = () => {
