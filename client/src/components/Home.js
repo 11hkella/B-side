@@ -43,7 +43,7 @@ export default class Home extends Component {
     }
     render() {
         return (
-            <div>
+            <div className='review-List'>
                 {this.state.reviewList.map((review, i) => {
                     return <ReviewListItem
                         artist={review.artist}

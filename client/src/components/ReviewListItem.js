@@ -23,8 +23,10 @@ export default class ReviewListItem extends Component {
         <div className='review-item-info-container'>
           <h2>{title}</h2>
           <h3>{artist}</h3>
-          <p>isLiked: {like ? 'yes' : 'no'}</p>
-          <p># upPlays: {upPlay}</p>
+          <div className='icon-container'>
+            <p>isLiked: {like ? 'yes' : 'no'}</p>
+            <p># upPlays: {upPlay}</p>
+          </div>
         </div>
 
       </div>
