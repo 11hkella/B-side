@@ -1,0 +1,8 @@
+.review-List{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 98vw;
+  margin: 0 auto;
+}

@@ -1,0 +1,21 @@
+.review-page-artist{
+  text-align: center;
+  color: grey;
+  font-weight: 200;
+}
+.review-page-artist span{
+  color: rgb(233, 233, 233);
+  font-weight: 600;
+}
+.hero{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero .title-and-artist{
+  padding: 30px;
+}
+.hero img{
+  height: 300px;
+  width: 300px;
+}

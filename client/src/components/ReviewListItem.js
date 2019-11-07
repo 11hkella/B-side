@@ -16,13 +16,13 @@ export default class ReviewListItem extends Component {
 
         <div className='review-pic-container'>
           <a href={link}>
-            <img src={image} alt="artist picture" />
+            <img className='list-pic' src={image} alt="artist picture" />
           </a>
         </div >
 
         <div className='review-item-info-container'>
-          <h2>{title}</h2>
-          <h3>{artist}</h3>
+          <h2><a href={link}>{title}</a></h2>
+          <h3><a href={link}>{artist}</a></h3>
           <div className='icon-container'>
             <p>isLiked: {like ? 'yes' : 'no'}</p>
             <p># upPlays: {upPlay}</p>

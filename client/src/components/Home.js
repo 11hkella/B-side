@@ -3,6 +3,8 @@ import axios from 'axios'
 
 import ReviewListItem from './ReviewListItem';
 
+import './Home.css';
+
 export default class Home extends Component {
     state = {
         toggleForm: true,

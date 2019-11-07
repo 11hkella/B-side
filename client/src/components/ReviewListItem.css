@@ -1,7 +1,7 @@
 .review-item-container{
   width: 230px;
   height: 350px;
-  margin: 0 auto;
+  margin: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,7 +20,7 @@
   width: 100%;
 }
 
-img{
+.list-pic{
   size: cover;
   width: 220px;
   height: 220px;
@@ -35,4 +35,8 @@ h2{
 }
 h3{
   text-align: right;
+}
+a{
+  text-decoration: none;
+  color: inherit;
 }

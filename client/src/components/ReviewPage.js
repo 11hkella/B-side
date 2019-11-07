@@ -3,6 +3,8 @@ import axios from 'axios'
 
 import ReplyList from './ReplyList'
 
+import './ReviewPage.css'
+
 export default class ReviewPage extends Component {
   state = {
     artist: '',
@@ -46,11 +48,16 @@ export default class ReviewPage extends Component {
   render() {
     return (
       <div>
-        <header>
-          <h1>{this.state.title}</h1>
-          <h3>{this.state.artist}</h3>
-        </header>
-        <div>
+        <div className='hero'>
+          <img src={this.state.image} alt='artist picture' />
+          <div className='title-and-artist'>
+            <h1 className='review-page-title'>
+              {this.state.title}</h1>
+            <h3 className='review-page-artist'>
+              By <span>{this.state.artist}</span></h3>
+          </div>
+        </div>
+        <div className='review-container'>
           <p>{this.state.message}</p>
         </div>
         <div>
@@ -58,7 +65,7 @@ export default class ReviewPage extends Component {
             onChange={this.onReplyFormChange} />
           <button onClick={this.submitNewReply}>Submit</button>
         </div>
-        <div className="Reply List">
+        <div className="reply-list">
           {this.state.replyList.map((reply, i) => {
             return <ReplyList
               message={reply.message}
