@@ -16,7 +16,7 @@ export default class ReviewListItem extends Component {
 
         <div className='review-pic-container'>
           <a href={link}>
-            <img className='list-pic' src={image} alt="artist picture" />
+            <img className='list-pic' src={image} alt="artist or song" />
           </a>
         </div >
 

@@ -49,22 +49,28 @@ export default class ReviewPage extends Component {
     return (
       <div>
         <div className='hero'>
-          <img src={this.state.image} alt='artist picture' />
+
+          <img src={this.state.image} alt='album cover' />
+
           <div className='title-and-artist'>
             <h1 className='review-page-title'>
               {this.state.title}</h1>
             <h3 className='review-page-artist'>
               By <span>{this.state.artist}</span></h3>
           </div>
+
         </div>
+
         <div className='review-container'>
           <p>{this.state.message}</p>
         </div>
-        <div>
+
+        <div className='reply-form'>
           <textarea name='newReply' placeholder='write a reply...'
             onChange={this.onReplyFormChange} />
           <button onClick={this.submitNewReply}>Submit</button>
         </div>
+
         <div className="reply-list">
           {this.state.replyList.map((reply, i) => {
             return <ReplyList
@@ -75,6 +81,7 @@ export default class ReviewPage extends Component {
               key={i} />
           })}
         </div>
+
       </div>
     )
   }
