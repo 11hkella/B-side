@@ -1,0 +1,17 @@
+.nav-bar-container{
+  display: block;
+  background-color: #2423234f;
+  padding: 14px 0 2px 0;
+}
+
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav a{
+  color: #e9e8e8;
+  text-decoration: none;
+  margin: 8px 20px
+}
