@@ -54,6 +54,7 @@ export default class Home extends Component {
                         like={review.like}
                         upPlay={review.upPlay}
                         id={review._id}
+                        refresh={this.renderReviewList}
                         key={i} />
                 })}
             </div>
