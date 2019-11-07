@@ -44,30 +44,6 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-                <header>
-                    <h1>B Side</h1>
-                </header>
-
-                {this.state.toggleForm
-                    ?
-                    <button onClick={this.toggleFormClick}>Write Review</button>
-                    :
-                    <div>
-                        <button onClick={this.toggleFormClick}>Hide</button>
-                        <form id='reviewForm' onSubmit={this.submitNewReview}>
-                            <input type='text' name='newArtist'
-                                onChange={this.onFormChange} placeholder='artist' />
-                            <input type='text' name='newTitle'
-                                onChange={this.onFormChange} placeholder='album or song title' />
-                            <input type='text' name='newImage'
-                                onChange={this.onFormChange} placeholder='image url' />
-                            <input type='submit' />
-                        </form>
-                        <textarea name='newMessage' form='reviewForm'
-                            onChange={this.onFormChange} placeholder='review...' />
-                    </div>
-                }
-
                 {this.state.reviewList.map((review, i) => {
                     return <ReviewListItem
                         artist={review.artist}
