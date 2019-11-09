@@ -1,7 +1,7 @@
 .review-item-container{
   width: 230px;
   height: 350px;
-  margin: 15px;
+  margin: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,14 +50,4 @@ a{
 }
 .icon-container{
   width: 100%;
-  display: flex;
-  justify-content: space-around;
-}
-.icon-container img{
-  width: 30px;
-  transition: all .1s ease-in-out;
-}
-.icon-container img:hover{
-  transform: scale(1.1, 1.1);
-  cursor: pointer;
 }
