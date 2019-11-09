@@ -14,6 +14,7 @@ function App() {
     <div className="App">
       <Router>
         <NavBar />
+        <div className="spacer"></div>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/review" component={ReviewForm} />
