@@ -1,25 +1,29 @@
 .nav-bar-container{
-  padding: 14px 0 2px 0;
-  margin-bottom: 6px;
-  background-color: rgba(241, 241, 241, 0.89);
   color: black;
   height: 100vh;
   min-width: 240px;
 }
 
+.nav-bar-logo-container{
+  margin: 10px 0 0 5px;
+  position: fixed;
+}
+
 nav{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   position: fixed;
   width: 240px;
+  height: 600px;
+  background-color: rgb(241, 241, 241);
+  border-radius: 0 6px 6px 0;
+  border: 1px solid rgba(121, 120, 120, 0.452);
+  top: 102px;
 }
 
 nav a{
   text-decoration: none;
   margin: 8px 20px
-}
-nav h1{
-
 }
