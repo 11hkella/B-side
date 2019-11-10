@@ -47,7 +47,7 @@ export default class ReviewPage extends Component {
   }
   render() {
     return (
-      <div>
+      <div className='single-review-container'>
         <div className='hero'>
 
           <img src={this.state.image} alt='album cover' />

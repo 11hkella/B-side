@@ -1,0 +1,75 @@
+.create-review-container{
+  width: 100%;
+  padding: 20px;
+}
+.hero-preview{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.image-input-container .image-preview{
+  height: 300px;
+  width: 300px;
+  border: 3px solid #74737393;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.image-input-container .image-preview img{
+  width: 300px;
+  height: 300px;
+}
+input{
+  border: 1px solid #74737393;
+  background: none;
+  color: #faf9f9;
+  border-radius: 4px;
+  padding: 4px 5px;
+  text-align: center;
+  font-size: 1.2em;
+  margin: 8px;
+}
+label{
+  color: #d8d8d893;
+}
+.hero-right-preview{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0 10px;
+}
+
+
+.artist-input-container .artist-input{
+  max-width: 400px;
+  font-weight: 600;
+}
+.artist-input-container .artist-label{
+  position: relative;
+  left: 90px;
+  top: -21px;
+  background-color: rgb(3, 3, 3);
+  padding: 0 5px;
+  font-size: 15px;
+} 
+.artist-input-container span{
+  text-align: center;
+  color: grey;
+  font-weight: 200;
+}
+
+.title-input-container{
+  min-width: 450px;
+}
+.title-input-container .title-label{
+  position: relative;
+  left: -380px;
+  top: -40px;
+  background-color: rgb(3, 3, 3);
+  padding: 0 5px;
+  font-size: 15px;
+}
+.title-input-container input{
+  font-size: 2.4em;
+  min-width: 300px;
+}
