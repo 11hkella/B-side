@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 import ReplyList from './ReplyList.js'
 import StatusBar from './StatusBar.js'
 
 import './ReviewPage.css'
+import ReplyForm from './ReplyForm.js'
 
 export default class ReviewPage extends Component {
   state = {
@@ -29,30 +31,16 @@ export default class ReviewPage extends Component {
     await this.setState(reviewRes.data)
     this.setState({ replyList: replyListRes.data })
   }
-  onReplyFormChange = (e) => {
-    const newReply = e.target.value
-    this.setState({ newReply })
-  }
-  submitNewReply = async () => {
-    const reply = {
-      message: this.state.newReply,
-      like: false,
-      reviewId: this.state._id
-    }
-    await axios.post('/api/reply', reply)
-    this.updatePageInfo()
-  }
-  deleteReply = async (id) => {
-    await axios.delete(`/api/reply/${id}`)
-    this.updatePageInfo()
-  }
+
   render() {
     return (
       <div className='single-review-container'>
         <div className='hero'>
 
           <div className='image-container'>
-            <img src={this.state.image} alt='album cover' />
+            <Link to='/'>
+              <img src={this.state.image} alt='album cover' />
+            </Link>
           </div>
 
           <div className='title-and-artist'>
@@ -76,9 +64,9 @@ export default class ReviewPage extends Component {
         </div>
 
         <div className='reply-form'>
-          <textarea name='newReply' placeholder='write a reply...'
-            onChange={this.onReplyFormChange} />
-          <button onClick={this.submitNewReply}>Submit</button>
+          <ReplyForm
+            reviewId={this.state._id}
+            refresh={this.updatePageInfo} />
         </div>
 
         <div className="reply-list">
@@ -87,7 +75,7 @@ export default class ReviewPage extends Component {
               message={reply.message}
               id={reply._id}
               like={reply.like}
-              deleteReply={this.deleteReply}
+              refresh={this.updatePageInfo}
               key={i} />
           })}
         </div>
