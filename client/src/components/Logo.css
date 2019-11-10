@@ -1,0 +1,28 @@
+.logo-container{
+  background-color: rgb(241, 241, 241);
+  width: 90px;
+  height: 90px;
+  border-radius: 99%;
+}
+.logo-container > .logo-image{
+  background-image: url('/images/record-logo2.png');
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo-image > .logo-text{
+  color: rgb(125, 162, 192);
+  font-size: 30px;
+  font-family: 'Righteous', cursive;
+  position: relative;
+  top: 8px;
+  line-height: 18px;
+  text-shadow: 2px 2px #ec0000;
+}
+.logo-text > span{
+  font-size: 55px;
+  color: rgb(3, 3, 3)
+}

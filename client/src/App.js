@@ -5,6 +5,7 @@ import Home from './components/Home.js'
 import ReviewPage from './components/ReviewPage.js'
 import ReviewForm from './components/ReviewForm.js'
 import NavBar from './components/NavBar.js'
+import Logo from './components/Logo.js'
 
 
 import './App.css';
@@ -17,6 +18,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/review" component={ReviewForm} />
+          <Route exact path="/logo" component={Logo} />
           <Route exact path="/:reviewId" component={ReviewPage} />
         </Switch>
       </Router>
