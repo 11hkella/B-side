@@ -40,8 +40,7 @@ export default class ReviewForm extends Component {
   render() {
     return (
       <div className='create-review-container'>
-        <form id='reviewForm'
-          onSubmit={this.submitNewReview}>
+        <form id='reviewForm'>
           <div className='hero-preview'>
 
             <div className='image-input-container'>
@@ -87,8 +86,10 @@ export default class ReviewForm extends Component {
           </div>
 
           <div className='review-post-container'>
-            <input type='submit' value='Post'
-              className='review-post' />
+            <span className='review-post'
+              onClick={this.submitNewReview}>
+              <img src='./images/post_add-24px.svg' alt='post' />
+            </span>
           </div>
 
 
