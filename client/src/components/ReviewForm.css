@@ -6,6 +6,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin: 5px 0 10px 0;
 }
 .image-input-container .image-preview{
   height: 300px;
@@ -72,4 +73,48 @@ label{
 .title-input-container input{
   font-size: 2.4em;
   min-width: 300px;
+}
+
+
+.review-input-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.review-input-container textarea{
+  border: 1px solid #74737393;
+  background: none;
+  color: #faf9f9;
+  border-radius: 4px;
+  padding: 8px 10px;
+  min-width: 600px;
+  max-width: 800px;
+  min-height: 200px;
+  margin: 8px 0 6px 0;
+  font-size: 1.1em;
+  line-height: 27px;
+  letter-spacing: 1px;
+}
+.review-input-container label{
+  position: relative;
+  left: -212px;
+  top: 13px;
+  background-color: rgb(3, 3, 3);
+  padding: 0 5px;
+  font-size: 15px;
+}
+
+.review-post-container{
+  text-align: right;
+  width: 500px;
+  margin: 0 auto;
+}
+.review-post{
+  padding: 10px 20px;
+  font-weight: 600;
+}
+.review-post:hover{
+  background-color: rgba(81, 255, 12, 0.377);
+  border: 1px solid rgb(150, 150, 150);
 }

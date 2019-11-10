@@ -47,14 +47,13 @@ export default class ReviewForm extends Component {
             <div className='image-input-container'>
               <div className='image-preview'>
                 <img src={this.state.newImage}
-                  alt='artist or song cover'
-                  placeholder='import artist image' />
+                  alt='artist or song cover' />
               </div>
               <p>- or -</p>
               <input type='text'
                 name='newImage'
                 onChange={this.onFormChange}
-                placeholder='image url' />
+                placeholder='Image URL' />
             </div>
 
             <div className='hero-right-preview'>
@@ -79,13 +78,19 @@ export default class ReviewForm extends Component {
 
           </div>
 
+          <div className='review-input-container'>
+            <label htmlFor='newMessage'>Review...</label>
 
-          <textarea name='newMessage'
-            form='reviewForm'
-            onChange={this.onFormChange}
-            placeholder='review...' />
+            <textarea name='newMessage'
+              form='reviewForm'
+              onChange={this.onFormChange} />
+          </div>
 
-          <input type='submit' />
+          <div className='review-post-container'>
+            <input type='submit' value='Post'
+              className='review-post' />
+          </div>
+
 
         </form>
 
