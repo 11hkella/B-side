@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import StatusBar from './StatusBar.js'
 import './ReviewListItem.css'
 
@@ -15,16 +16,16 @@ export default class ReviewListItem extends Component {
       <div className='review-item-container'>
 
         <div className='review-pic-container'>
-          <a href={link}>
+          <Link to={link}>
             <img className='list-pic' src={image} alt="artist or song" />
-          </a>
+          </Link>
         </div >
 
         <div className='review-item-info-container'>
-          <a href={link}>
+          <Link to={link}>
             <h2>{title}</h2>
             <h3>{artist}</h3>
-          </a>
+          </Link>
         </div>
 
         <div className='icon-container'>
