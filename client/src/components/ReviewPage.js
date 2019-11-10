@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
-import ReplyList from './ReplyList'
+import ReplyList from './ReplyList.js'
+import StatusBar from './StatusBar.js'
 
 import './ReviewPage.css'
 
@@ -50,13 +51,22 @@ export default class ReviewPage extends Component {
       <div className='single-review-container'>
         <div className='hero'>
 
-          <img src={this.state.image} alt='album cover' />
+          <div className='image-container'>
+            <img src={this.state.image} alt='album cover' />
+          </div>
 
           <div className='title-and-artist'>
             <h1 className='review-page-title'>
               {this.state.title}</h1>
             <h3 className='review-page-artist'>
               By <span>{this.state.artist}</span></h3>
+            <div className='status-bar-container'>
+              <StatusBar
+                like={this.state.like}
+                upPlay={this.state.upPlay}
+                refresh={this.updatePageInfo}
+                id={this.state._id} />
+            </div>
           </div>
 
         </div>

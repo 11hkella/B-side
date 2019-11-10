@@ -9,6 +9,10 @@
   margin: 10px 0 0 5px;
   position: fixed;
   cursor: pointer;
+  transition: all 200ms ease;
+}
+.nav-bar-logo-container:hover{
+  transform: scale(1.03, 1.03);
 }
 
 nav{
