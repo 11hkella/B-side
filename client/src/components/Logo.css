@@ -3,6 +3,9 @@
   width: 90px;
   height: 90px;
   border-radius: 99%;
+  -webkit-user-select: none; /* Chrome/Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
 }
 .logo-container > .logo-image{
   background-image: url('/images/record-logo2.png');

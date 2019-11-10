@@ -2,11 +2,13 @@
   color: black;
   height: 100vh;
   min-width: 240px;
+  transition: all 300ms linear;
 }
 
 .nav-bar-logo-container{
   margin: 10px 0 0 5px;
   position: fixed;
+  cursor: pointer;
 }
 
 nav{
@@ -21,9 +23,91 @@ nav{
   border-radius: 0 6px 6px 0;
   border: 1px solid rgba(121, 120, 120, 0.452);
   top: 102px;
+  left: -187px;
 }
 
 nav a{
   text-decoration: none;
   margin: 8px 20px
+}
+
+
+    /* Animation parameters */
+
+.nav-bar-resize{
+  min-width: 60px;
+}
+
+
+.spinOut{
+  animation: spinOut 300ms linear 1 reverse;
+  -webkit-animation: spinOut 300ms linear 1 reverse;
+  -moz-animation: spinOut 300ms linear 1 reverse;
+}
+.spinIn{
+  animation: spinIn 300ms linear 1 ;
+  -webkit-animation: spinIn 300ms linear 1 ;
+  -moz-animation: spinIn 300ms linear 1 ;
+}
+
+@keyframes spinOut {
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(360deg);}
+}
+@-webkit-keyframes spinOut {
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(360deg);}
+}
+@-moz-keyframes spinOut {
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(360deg);}
+}
+@keyframes spinIn {
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(360deg);}
+}
+@-webkit-keyframes spinIn {
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(360deg);}
+}
+@-moz-keyframes spinIn {
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(360deg);}
+}
+
+
+.navShow{
+  animation: slideOut 300ms linear 1 forwards;
+  -webkit-animation: slideOut 300ms linear 1 forwards;
+  -moz-animation: slideOut 300ms linear 1 forwards;
+}
+.navHide{
+  animation: slideIn 300ms linear 1;
+  -webkit-animation: slideIn 300ms linear 1;
+  -moz-animation: slideIn 300ms linear 1;
+}
+
+@keyframes slideOut{
+  0%{left: -187px;}
+  100%{left:0;}
+}
+@-webkit-keyframes slideOut{
+  0%{left: -187px;}
+  100%{left:0;}
+}
+@-moz-keyframes slideOut{
+  0%{left: -187px;}
+  100%{left:0;}
+}
+@keyframes slideIn{
+  0%{left:0;}
+  100%{left: -187px;}
+}
+@-webkit-keyframes slideIn{
+  0%{left:0;}
+  100%{left: -187px;}
+}
+@-moz-keyframes slideIn{
+  0%{left:0;}
+  100%{left: -187px;}
 }
