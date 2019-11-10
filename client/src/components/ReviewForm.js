@@ -67,7 +67,7 @@ export default class ReviewForm extends Component {
               <div className='artist-input-container'>
                 <label className='artist-label'
                   htmlFor='newArtist'>Artist</label>
-                <span>by</span>
+                <span>By</span>
                 <input type='text'
                   name='newArtist'
                   onChange={this.onFormChange}

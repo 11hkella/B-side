@@ -11,7 +11,7 @@
 .image-input-container .image-preview{
   height: 300px;
   width: 300px;
-  border: 3px solid #74737393;
+  border: 1px solid #74737393;
   border-radius: 5px;
   overflow: hidden;
 }
@@ -25,7 +25,6 @@ input{
   color: #faf9f9;
   border-radius: 4px;
   padding: 4px 5px;
-  text-align: center;
   font-size: 1.2em;
   margin: 8px;
 }
@@ -57,6 +56,7 @@ label{
   text-align: center;
   color: grey;
   font-weight: 200;
+  font-size: 19px;
 }
 
 .title-input-container{
@@ -71,8 +71,9 @@ label{
   font-size: 15px;
 }
 .title-input-container input{
-  font-size: 2.4em;
+  font-size: 36px;
   min-width: 300px;
+  font-weight: 700;
 }
 
 
@@ -112,7 +113,7 @@ label{
   margin: 0 auto;
 }
 .review-post{
-  border: 1px solid rgba(119, 119, 119, 0.747);
+  border: 3px solid rgba(119, 119, 119, 0.747);
   border-radius: 99%;
   padding: 10px;
   display: flex;
