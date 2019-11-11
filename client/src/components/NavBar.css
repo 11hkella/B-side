@@ -44,9 +44,9 @@ nav a{
 
 
 .spinOut{
-  animation: spinOut 300ms linear 1 reverse;
-  -webkit-animation: spinOut 300ms linear 1 reverse;
-  -moz-animation: spinOut 300ms linear 1 reverse;
+  animation: spinOut 300ms linear 1 reverse forwards;
+  -webkit-animation: spinOut 300ms linear 1 reverse forwards;
+  -moz-animation: spinOut 300ms linear 1 reverse forwards;
 }
 .spinIn{
   animation: spinIn 300ms linear 1 ;
@@ -55,28 +55,28 @@ nav a{
 }
 
 @keyframes spinOut {
-  0%{transform: rotate(0deg);}
-  100%{transform: rotate(360deg);}
+  0%{transform: rotate(-55deg);}
+  100%{transform: rotate(0deg);}
 }
 @-webkit-keyframes spinOut {
-  0%{transform: rotate(0deg);}
-  100%{transform: rotate(360deg);}
+  0%{transform: rotate(-55deg);}
+  100%{transform: rotate(0deg);}
 }
 @-moz-keyframes spinOut {
-  0%{transform: rotate(0deg);}
-  100%{transform: rotate(360deg);}
+  0%{transform: rotate(-55deg);}
+  100%{transform: rotate(0deg);}
 }
 @keyframes spinIn {
-  0%{transform: rotate(0deg);}
-  100%{transform: rotate(360deg);}
+  0%{transform: rotate(-55deg);}
+  100%{transform: rotate(0deg);}
 }
 @-webkit-keyframes spinIn {
-  0%{transform: rotate(0deg);}
-  100%{transform: rotate(360deg);}
+  0%{transform: rotate(-55deg);}
+  100%{transform: rotate(0deg);}
 }
 @-moz-keyframes spinIn {
-  0%{transform: rotate(0deg);}
-  100%{transform: rotate(360deg);}
+  0%{transform: rotate(-55deg);}
+  100%{transform: rotate(0deg);}
 }
 
 

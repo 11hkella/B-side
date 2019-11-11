@@ -3,4 +3,8 @@
 }
 .header-container > h1{
   font-size: 45px;
+  letter-spacing: -5px;
+  margin-bottom: 2px;
+  line-height: 35px;
+  text-shadow: -2px -2px #ec0000;
 }
