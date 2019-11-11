@@ -63,12 +63,6 @@ export default class ReviewPage extends Component {
           <p>{this.state.message}</p>
         </div>
 
-        <div className='reply-form'>
-          <ReplyForm
-            reviewId={this.state._id}
-            refresh={this.updatePageInfo} />
-        </div>
-
         <div className="reply-list">
           {this.state.replyList.map((reply, i) => {
             return <ReplyList
@@ -78,6 +72,12 @@ export default class ReviewPage extends Component {
               refresh={this.updatePageInfo}
               key={i} />
           })}
+        </div>
+
+        <div className='reply-form'>
+          <ReplyForm
+            reviewId={this.state._id}
+            refresh={this.updatePageInfo} />
         </div>
 
       </div>

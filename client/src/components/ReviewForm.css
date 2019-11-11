@@ -48,7 +48,7 @@ label{
   position: relative;
   left: 90px;
   top: -21px;
-  background-color: rgb(3, 3, 3);
+  background-color: rgb(3, 3, 3); 
   padding: 0 5px;
   font-size: 15px;
 } 
@@ -86,7 +86,7 @@ label{
 .review-input-container textarea{
   border: 1px solid #74737393;
   background: none;
-  color: #faf9f9;
+  color: #f3f3f3;
   border-radius: 4px;
   padding: 8px 10px;
   min-width: 600px;
@@ -131,5 +131,11 @@ label{
 .review-post:hover{
   transform: scale(1.1, 1.1);
   border-color: rgba(141, 141, 141, 0.747);
+}
 
+.reply-form{
+  position: fixed;
+  top: 710px;
+  left: 510px;
+  background-color: #faf9f9;
 }
