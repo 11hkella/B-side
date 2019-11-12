@@ -8,6 +8,8 @@ import './NavBar.css';
 export default class NavBar extends Component {
   state = {
     navBarOut: false,
+    newest: false,
+    writeReview: false,
   }
   toggleNavBar = () => {
     this.setState({ navBarOut: !this.state.navBarOut })
@@ -24,9 +26,14 @@ export default class NavBar extends Component {
             </div >
 
             <nav className='navShow'>
-              <h1>B sides</h1>
-              <Link to='/'>Home</Link>
-              <Link to='/review'>Write a Review</Link>
+              <div className='nav-section-container'>
+                <h3>Reviews</h3>
+                <Link to='/'>Newest</Link>
+              </div>
+              <div className='nav-section-container'>
+                <h3>Create</h3>
+                <Link to='/review'>Write a Review</Link>
+              </div>
             </nav>
 
           </div >
@@ -39,9 +46,14 @@ export default class NavBar extends Component {
             </div>
 
             <nav className='navHide'>
-              <h1>B sides</h1>
-              <Link to='/'>Home</Link>
-              <Link to='/review'>Write a Review</Link>
+              <div className='nav-section-container'>
+                <h3>Reviews</h3>
+                <Link to='/'>Newest</Link>
+              </div>
+              <div className='nav-section-container'>
+                <h3>Create</h3>
+                <Link to='/review'>Write a Review</Link>
+              </div>
             </nav>
 
           </div>

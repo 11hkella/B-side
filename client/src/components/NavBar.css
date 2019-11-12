@@ -19,7 +19,6 @@ nav{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
   position: fixed;
   width: 240px;
   height: 600px;
@@ -28,13 +27,27 @@ nav{
   border: 1px solid rgba(121, 120, 120, 0.452);
   top: 102px;
   left: -187px;
+  padding-top: 20px;
 }
-
+.nav-section-container{
+  margin: 10px 0;
+  padding: 10px 0 20px 0;
+}
+nav h3{
+  color: rgb(94, 93, 93); 
+  font-weight: 300; 
+  margin: 10px 0 33px 0;
+  font-size: 20px;
+}
 nav a{
-  text-decoration: none;
-  margin: 8px 20px
+  font-weight: 600;
+  font-size: 18px;
+  display: block;
 }
-
+nav a:hover{
+  color: #dd0c0cbb;
+  border-left: 3px solid #dd0c0cbb;
+}
 
     /* Animation parameters */
 
