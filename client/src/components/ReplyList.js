@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
-
+import './ReplyList.css'
 
 export default class ReplyList extends Component {
   deleteReply = async () => {
@@ -10,9 +10,10 @@ export default class ReplyList extends Component {
   }
   render() {
     return (
-      <div>
+      <div className='single-reply'>
         <p>{this.props.message}</p>
-        <button onClick={this.deleteReply}>Delete</button>
+        <img src='./images/clear-24px.svg' alt='delete'
+          onClick={this.deleteReply} />
       </div>
     )
   }

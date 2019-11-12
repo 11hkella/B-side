@@ -4,9 +4,9 @@ import axios from 'axios'
 
 import ReplyList from './ReplyList.js'
 import StatusBar from './StatusBar.js'
+import ReplyForm from './ReplyForm.js'
 
 import './ReviewPage.css'
-import ReplyForm from './ReplyForm.js'
 
 export default class ReviewPage extends Component {
   state = {

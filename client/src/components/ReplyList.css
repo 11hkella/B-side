@@ -1,0 +1,13 @@
+.single-reply{
+  display:flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(3, 180, 3); 
+  margin: 0 40px;
+  padding: 20px 0;
+}
+.single-reply > p{
+  margin: 0 14px 0 20px;
+}
+.single-reply > img{
+  margin: 0 10px;
+}
