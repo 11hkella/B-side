@@ -33,7 +33,11 @@ export default class ReplyForm extends Component {
         <textarea name='newReply' placeholder='write a reply...'
           onChange={this.onReplyFormChange}
           value={this.state.newReply} />
-        <button onClick={this.submitNewReply}>Submit</button>
+        <div className='reply-submit-container'
+          onClick={this.submitNewReply} >
+          <img src='./images/arrow_upward-24px.svg'
+            alt='post' />
+        </div>
       </div>
     )
   }
