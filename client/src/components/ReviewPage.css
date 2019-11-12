@@ -33,6 +33,7 @@
 }
 .title-and-artist .review-page-title{
   text-align: left;
+  text-shadow: -1px -1px #ec0000;
 }
 .title-and-artist .review-page-artist{
   text-align: left;

@@ -77,19 +77,21 @@ export default class ReviewForm extends Component {
 
           </div>
 
-          <div className='review-input-container'>
-            <label htmlFor='newMessage'>Review...</label>
+          <div className='review-form-body-container'>
+            <div className='review-input-container'>
+              <label htmlFor='newMessage'>Review...</label>
 
-            <textarea name='newMessage'
-              form='reviewForm'
-              onChange={this.onFormChange} />
-          </div>
+              <textarea name='newMessage'
+                form='reviewForm'
+                onChange={this.onFormChange} />
+            </div>
 
-          <div className='review-post-container'>
-            <span className='review-post'
-              onClick={this.submitNewReview}>
-              <img src='./images/post_add-24px.svg' alt='post' />
-            </span>
+            <div className='review-post-container'>
+              <span className='review-post'
+                onClick={this.submitNewReview}>
+                <img src='./images/post_add-24px.svg' alt='post' />
+              </span>
+            </div>
           </div>
 
 

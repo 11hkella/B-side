@@ -107,10 +107,7 @@ label{
 }
 
 .review-post-container{
-  display: flex;
-  justify-content: flex-end;
-  width: 500px;
-  margin: 0 auto;
+  margin: 20px;
 }
 .review-post{
   border: 3px solid rgba(119, 119, 119, 0.747);
@@ -131,4 +128,10 @@ label{
 .review-post:hover{
   transform: scale(1.1, 1.1);
   border-color: rgba(141, 141, 141, 0.747);
+}
+.review-form-body-container{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-wrap: wrap;
 }
