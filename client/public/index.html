@@ -40,6 +40,30 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDLK0fHDMP9Jce3ifZ1agoAxwoeqxP67rQ",
+      authDomain: "b-side-review.firebaseapp.com",
+      databaseURL: "https://b-side-review.firebaseio.com",
+      projectId: "b-side-review",
+      storageBucket: "b-side-review.appspot.com",
+      messagingSenderId: "99363105763",
+      appId: "1:99363105763:web:fadb2aafd230a9896a8ed6",
+      measurementId: "G-8ZESD6MGSQ"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
 </body>
 
 </html>

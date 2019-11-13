@@ -4,7 +4,7 @@
 }
 .hero-preview{
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   margin: 5px 0 10px 0;
 }
@@ -18,6 +18,21 @@
 .image-input-container .image-preview img{
   width: 300px;
   height: 300px;
+}
+.image-input-container input{
+  max-width: 218px;
+  border: none;
+}
+.image-input-container button{
+  max-width: 84px;
+  border: 1px solid #74737393;
+  background: none;
+  color: #faf9f9;
+  border-radius: 4px;
+  transition: all 200ms ease;
+}
+.image-input-container button:hover{
+  transform: scale(1.05, 1.05);
 }
 input{
   border: 1px solid #74737393;
@@ -64,8 +79,8 @@ label{
 }
 .title-input-container .title-label{
   position: relative;
-  left: -380px;
-  top: -40px;
+  left: -165px;
+  top: 12px;
   background-color: rgb(3, 3, 3);
   padding: 0 5px;
   font-size: 15px;

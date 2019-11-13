@@ -4,13 +4,81 @@ import { Redirect } from 'react-router-dom'
 
 import './ReviewForm.css'
 
+import * as firebase from 'firebase';
+const firebaseConfig = {
+  apiKey: "AIzaSyDLK0fHDMP9Jce3ifZ1agoAxwoeqxP67rQ",
+  authDomain: "b-side-review.firebaseapp.com",
+  databaseURL: "https://b-side-review.firebaseio.com",
+  projectId: "b-side-review",
+  storageBucket: "gs://b-side-review.appspot.com",
+  messagingSenderId: "99363105763",
+  appId: "1:99363105763:web:fadb2aafd230a9896a8ed6",
+  measurementId: "G-8ZESD6MGSQ"
+};
+firebase.initializeApp(firebaseConfig);
+const ref = firebase.storage().ref();
+
+
 export default class ReviewForm extends Component {
   state = {
     newArtist: '',
     newTitle: '',
-    newImage: '',
+    imageFile: null,
     newMessage: '',
     redirect: false,
+    imagePath: '',
+    fileUploaded: false,
+    guidFileName: '',
+  }
+
+  generateUUID = () => { // Public Domain/MIT
+    let d = new Date().getTime();
+    if (typeof performance !== 'undefined' && typeof performance.now === 'function') {
+      d += performance.now(); //use high-precision timer if available
+    }
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      let r = (d + Math.random() * 16) % 16 | 0;
+      d = Math.floor(d / 16);
+      return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+  }
+
+  uploadCommonImage = async (e) => {
+    e.preventDefault()
+    if (this.state.imageFile) {
+      const guidFileName = this.generateUUID();
+      await this.setState({ guidFileName })
+      const imagePath = `common/images/${guidFileName}`;
+      try {
+        //upload image
+        const uploadTask = await ref.child(imagePath).put(this.state.imageFile, { contentType: this.state.imageFile.type });
+        const downloadURL = await uploadTask.ref.getDownloadURL();
+        this.setState({
+          imagePath: downloadURL,
+          fileUploaded: true
+        })
+      } catch (err) { //send error
+        console.error('failed to upload image')
+        console.error(err)
+      }
+    } else return
+  }
+
+  deleteCommonImage = async () => {
+    const imagePath = `common/images/${this.state.guidFileName}`;
+    const deleteTask = await ref.child(imagePath).delete();
+    this.setState({
+      fileUploaded: false,
+      imagePath: '',
+    })
+    return deleteTask;
+  }
+
+  onFileChange = (e) => {
+    if (e.target.files[0]) {
+      const imageFile = e.target.files[0]
+      this.setState({ imageFile })
+    }
   }
 
   onFormChange = (e) => {
@@ -24,7 +92,7 @@ export default class ReviewForm extends Component {
     const newReview = {
       artist: this.state.newArtist,
       title: this.state.newTitle,
-      image: this.state.newImage,
+      image: this.state.imagePath,
       like: false,
       message: this.state.newMessage,
       upPlay: 0,
@@ -45,23 +113,34 @@ export default class ReviewForm extends Component {
 
             <div className='image-input-container'>
               <div className='image-preview'>
-                <img src={this.state.newImage}
+                <img src={this.state.imagePath === '' ?
+                  './images/record-logo2.png'
+                  :
+                  this.state.imagePath}
                   alt='artist or song cover' />
               </div>
-              <p>- or -</p>
-              <input type='text'
-                name='newImage'
-                onChange={this.onFormChange}
-                placeholder='Image URL' />
+
+              <input type='file'
+                name='imageFile'
+                accept="image/*"
+                onChange={this.onFileChange} />
+              {this.state.fileUploaded ?
+                <button onClick={this.deleteCommonImage}>
+                  <img src='./images/clear-24px.svg' alt='remove image' />
+                </button>
+                :
+                <button onClick={this.uploadCommonImage}>Upload</button>}
             </div>
 
             <div className='hero-right-preview'>
               <div className='title-input-container'>
+                <label htmlFor='newTitle'
+                  className='title-label'>Title</label>
+                <br />
                 <input type='text'
                   name='newTitle'
                   onChange={this.onFormChange} />
-                <label htmlFor='newTitle'
-                  className='title-label'>Title</label>
+
               </div>
 
               <div className='artist-input-container'>

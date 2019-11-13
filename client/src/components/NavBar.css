@@ -1,7 +1,7 @@
 .nav-bar-container{
   color: black;
   height: 100vh;
-  min-width: 240px;
+  min-width: 200px;
   transition: all 300ms linear;
 }
 
@@ -20,8 +20,8 @@ nav{
   flex-direction: column;
   justify-content: flex-start;
   position: fixed;
-  width: 240px;
-  height: 600px;
+  width: 200px;
+  height: 500px;
   background-color: #e0e0e0;
   border-radius: 0 6px 6px 0;
   border: 1px solid rgba(121, 120, 120, 0.452);
