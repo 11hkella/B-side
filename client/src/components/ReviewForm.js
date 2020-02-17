@@ -1,24 +1,35 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
-import firebaseBucket from '../Firebase';
-
+import * as firebase from 'firebase';
 
 import './ReviewForm.css'
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyDLK0fHDMP9Jce3ifZ1agoAxwoeqxP67rQ",
-//   authDomain: "b-side-review.firebaseapp.com",
-//   databaseURL: "https://b-side-review.firebaseio.com",
-//   projectId: "b-side-review",
-//   storageBucket: "gs://b-side-review.appspot.com",
-//   messagingSenderId: "99363105763",
-//   appId: "1:99363105763:web:fadb2aafd230a9896a8ed6",
-//   measurementId: "G-8ZESD6MGSQ"
-// };
+const firebaseConfig = {
+  apiKey: "AIzaSyDLK0fHDMP9Jce3ifZ1agoAxwoeqxP67rQ",
+  authDomain: "b-side-review.firebaseapp.com",
+  databaseURL: "https://b-side-review.firebaseio.com",
+  projectId: "b-side-review",
+  storageBucket: "gs://b-side-review.appspot.com",
+  messagingSenderId: "99363105763",
+  appId: "1:99363105763:web:fadb2aafd230a9896a8ed6",
+  measurementId: "G-8ZESD6MGSQ"
+};
 // firebase.initializeApp(firebaseConfig);
-// const ref = firebase.storage().ref();
-const ref = firebaseBucket.ref
+// const firebaseConfig = {
+//   apiKey: process.env.REACT_APP_API_KEY,
+//   authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+//   databaseURL: process.env.REACT_APP_DATABASE_URL,
+//   projectId: process.env.REACT_APP_PROJECT_ID,
+//   storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+//   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+//   appId: process.env.REACT_APP_APP_ID,
+//   measurementId: process.env.REACT_APP_MEASURMENT_ID
+// };
+
+console.log(firebaseConfig)
+firebase.initializeApp(firebaseConfig);
+const ref = firebase.storage().ref();
 console.log(ref)
 
 export default class ReviewForm extends Component {
@@ -67,7 +78,8 @@ export default class ReviewForm extends Component {
     } else return
   }
 
-  deleteCommonImage = async () => {
+  deleteCommonImage = async (e) => {
+    e.preventDefault()
     const imagePath = `common/images/${this.state.guidFileName}`;
     const deleteTask = await ref.child(imagePath).delete();
     this.setState({
